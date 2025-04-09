@@ -1,25 +1,34 @@
-﻿<Window x:Class="WpfApp1.MainWindow"
+﻿<Window x:Class="listview.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:listview"
         mc:Ignorable="d"
-        Title="MainWindow" Height="505" Width="800">
-    <Grid>
-        <ListView x:Name="listview">
+        Title="MainWindow" Height="500" Width="800">
+    <Grid Margin="0,0,0,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="387*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="listview" Margin="10,35,10,68" Grid.ColumnSpan="2">
             <ListView.View>
                 <GridView >
-                    <GridViewColumn Header="ID" Width="150" DisplayMemberBinding="{Binding ID}"/>
-                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Surname" Width="150" DisplayMemberBinding="{Binding Surname}"/>
-                    <GridViewColumn Header="PESEL" Width="150" DisplayMemberBinding="{Binding PESEL}"/>
+                    <GridViewColumn  Header="ID"  Width="auto" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="Name" Width="auto" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="SecondName" Width="auto" DisplayMemberBinding="{Binding SecondName}"/>
+                    <GridViewColumn Header="Surname" Width="auto" DisplayMemberBinding="{Binding Surname}"/>
+                    <GridViewColumn Header="Date of birth" Width="auto" DisplayMemberBinding="{Binding DateOfBirth}"/>
+                    <GridViewColumn Header="Phone Number" Width="auto" DisplayMemberBinding="{Binding PhoneNumber}"/>
+                    <GridViewColumn Header="Adress" Width="auto" DisplayMemberBinding="{Binding Adress}"/>
+                    <GridViewColumn Header="City" Width="auto" DisplayMemberBinding="{Binding City}"/>
+                    <GridViewColumn Header="ZIP Code" Width="auto" DisplayMemberBinding="{Binding ZIPCode}"/>
+                    <GridViewColumn Header="PESEL" Width="auto" DisplayMemberBinding="{Binding PESEL}"/>
                 </GridView>
             </ListView.View>
 
         </ListView>
-        <Button x:Name ="btnadd" Content="Button" HorizontalAlignment="Left" Margin="680,414,0,0" VerticalAlignment="Top" Height="38" Width="72" Click="btnadd_Click" />
+        <Button x:Name ="btnadd" Content="Button" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="38" Width="72" Click="btnadd_Click" Grid.Column="1" />
 
     </Grid>
-
 </Window>
