@@ -25,21 +25,21 @@ namespace listview
         public string City { get; set; }
         public string ZIPCode { get; set; }
         public string PESEL { get; set; }
-        
-       
-        
-        
-        
-        
+
+
+
+
+
+
 
         public Data()
         {
-            
+
             SecondName = "brak";
             PhoneNumber = "000000000";
-            
+
         }
-        public void assign(int _ID, string _Name, string _SecondName, string _SurName, string _DateOfBirth,  string _PhoneNumber, string _Adress, string _City, string _ZIPCode, string _PESEL)
+        public void assign(int _ID, string _Name, string _SecondName, string _SurName, string _DateOfBirth, string _PhoneNumber, string _Adress, string _City, string _ZIPCode, string _PESEL)
         {
             ID = _ID;
             Name = _Name;
@@ -73,6 +73,7 @@ namespace listview
             win1.ShowDialog();
 
             int id2 = win1.id2;
+            
             string name2 = win1.name2;
             string surname2 = win1.surname2;
             string pesel2 = win1.pesel2;
@@ -82,9 +83,10 @@ namespace listview
             string zipcode2 = win1.zipcode2;
             string phonenumber2 = win1.phonenumber2;
             string dateofbirth2 = win1.dateofbirth2;
+            
             var item = new Data();
-            item.assign(id2, name2, secondname2,surname2, dateofbirth2, phonenumber2,adress2, city2, zipcode2, pesel2);
+            item.assign(id2, name2, secondname2, surname2, dateofbirth2, phonenumber2, adress2, city2, zipcode2, pesel2);
             listview.Items.Add(item);
         }
     }
-    }
+}
