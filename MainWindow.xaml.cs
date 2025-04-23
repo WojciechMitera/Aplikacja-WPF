@@ -9,13 +9,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace listview
+namespace WpfApp1
 {
     class Data
     {
 
 
-        public int ID { get; set; }
+        
         public string Name { get; set; }
         public string SecondName { get; set; }
         public string Surname { get; set; }
@@ -28,20 +28,17 @@ namespace listview
 
 
 
-
-
-
-
         public Data()
         {
 
-            SecondName = "brak";
-            PhoneNumber = "000000000";
-
         }
-        public void assign(int _ID, string _Name, string _SecondName, string _SurName, string _DateOfBirth, string _PhoneNumber, string _Adress, string _City, string _ZIPCode, string _PESEL)
+
+
+
+        
+        public void assign(string _Name, string _SecondName, string _SurName, string _DateOfBirth, string _PhoneNumber, string _Adress, string _City, string _ZIPCode, string _PESEL)
         {
-            ID = _ID;
+            
             Name = _Name;
             Surname = _SurName;
             PESEL = _PESEL;
@@ -72,8 +69,8 @@ namespace listview
             //this.Close();
             win1.ShowDialog();
 
-            int id2 = win1.id2;
             
+
             string name2 = win1.name2;
             string surname2 = win1.surname2;
             string pesel2 = win1.pesel2;
@@ -83,9 +80,9 @@ namespace listview
             string zipcode2 = win1.zipcode2;
             string phonenumber2 = win1.phonenumber2;
             string dateofbirth2 = win1.dateofbirth2;
-            
+
             var item = new Data();
-            item.assign(id2, name2, secondname2, surname2, dateofbirth2, phonenumber2, adress2, city2, zipcode2, pesel2);
+            item.assign(name2, secondname2, surname2, dateofbirth2, phonenumber2, adress2, city2, zipcode2, pesel2);
             listview.Items.Add(item);
         }
     }
